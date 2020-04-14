@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+<packages/>
+<device Dclock="120000000" Dcore="Cortex-M4" DcoreVersion="r0p1" Dendian="Little-endian" Dfamily="MSP432E4 Series" Dfpu="SP_FPU" Dmpu="MPU" Dname="MSP432E401Y" DsubFamily="MSP432E4" Dvendor="Texas Instruments:16" Pname="">
+<url>http://www.keil.com/dd2/texasinstruments/msp432e401y</url>
+<package name="MSP432E4_DFP" url="http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/msp432cmsis/latest/exports/" vendor="TexasInstruments" version="3.2.0"/>
+</device>
+<toolchain Tcompiler="GCC" Toutput="exe"/>
+<components/>
+<apis/>
+</configuration>

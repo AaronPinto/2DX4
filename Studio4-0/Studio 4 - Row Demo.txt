@@ -1,0 +1,59 @@
+// 2DX4Studio4 
+// This program illustrates using a row 
+
+
+#include <stdint.h>
+#include "tm4c1294ncpdt.h"
+
+void PortE0_Init(void){	
+	SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R4;		  // activate the clock for Port E
+	while((SYSCTL_PRGPIO_R&SYSCTL_PRGPIO_R4) == 0){};	 // allow time for clock to stabilize
+	GPIO_PORTE_DIR_R |= 0b00000001;        		         // make PE0 an output  
+        GPIO_PORTE_DEN_R |= 0b00000001;                          // make PE0 digital enable
+	GPIO_PORTE_DATA_R=0b00000000;                            // drive row to 0 enable, 1 to disable
+	return;
+	}
+
+void PortM0M1_Init(void){
+	SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R11;                 //activate the clock for Port M
+	while((SYSCTL_PRGPIO_R&SYSCTL_PRGPIO_R11) == 0){};        //allow time for clock to stabilize 
+	GPIO_PORTM_DIR_R |= 0b00000000;                           //make PM0 and PM1 an input, to read the columns
+        GPIO_PORTM_DEN_R |= 0b00000011;                           //enable digital output
+	return;
+}
+
+
+//Turns on D2(PN0) and D1(PN1)
+
+void PortN0N1_Init(void){
+	SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R12;                 //activate the clock for Port N
+	while((SYSCTL_PRGPIO_R&SYSCTL_PRGPIO_R12) == 0){};        //allow time for clock to stabilize
+	GPIO_PORTN_DIR_R|=0b00000011;                             //Set direction as output 
+        GPIO_PORTN_DEN_R|=0b00000011;                             //Enable for digital output
+	return;
+}
+
+
+int main(void){
+	PortE0_Init();    //Initializing driving
+	PortM0M1_Init();  //Initializing for PM0 and PM1 for input 
+	PortN0N1_Init();  //Initializing PN0 and PN1 for output
+	 
+	
+	//Button connected to PM0 turns LED connected to PN1 - LED D1
+	//Button connected to PM1 turns LED connected to PN0 - LED D2
+	
+	
+	while(1){                                                //keep checking if the buttons are pressed 
+  if((GPIO_PORTM_DATA_R&0b00000001)==0){
+	GPIO_PORTN_DATA_R = 0b000000001;                          //Is button 1 pressed?
+	}
+	if((GPIO_PORTM_DATA_R&0b00000010)==0){                    //Is button 2 pressed?
+	GPIO_PORTN_DATA_R = 0b000000010;
+	}	
+	else{
+	GPIO_PORTN_DATA_R=0b00000000;                            //If not do not turn on LEDs
+	}
+
+}
+}

@@ -1,0 +1,24 @@
+Dependencies for Project '2dx4_ds51', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
+F (.\2dx4_ds51.c)(0x5E470D15)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\aaron\AppData\Local\Arm\Packs\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -D__MSP432E401Y__-o .\objects\2dx4_ds51.o --omf_browse .\objects\2dx4_ds51.crf --depend .\objects\2dx4_ds51.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B88E8)
+I (tm4c1294ncpdt.h)(0x5E45FC09)
+I (PLL.h)(0x533B6DDE)
+I (SysTick.h)(0x53F0088A)
+F (.\PLL.c)(0x53EFBEAA)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\aaron\AppData\Local\Arm\Packs\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -D__MSP432E401Y__-o .\objects\pll.o --omf_browse .\objects\pll.crf --depend .\objects\pll.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
+I (PLL.h)(0x533B6DDE)
+F (.\SysTick.c)(0x53F0088A)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\aaron\AppData\Local\Arm\Packs\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -D__MSP432E401Y__-o .\objects\systick.o --omf_browse .\objects\systick.crf --depend .\objects\systick.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
+F (RTE\Device\MSP432E401Y\startup_msp432e401y_uvision.s)(0x59E52B3C)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\aaron\AppData\Local\Arm\Packs\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include--pd "__UVISION_VERSION SETA 529" --pd "_RTE_ SETA 1" --pd "__MSP432E401Y__ SETA 1"--list .\listings\startup_msp432e401y_uvision.lst --xref -o .\objects\startup_msp432e401y_uvision.o --depend .\objects\startup_msp432e401y_uvision.d)
+F (RTE\Device\MSP432E401Y\system_msp432e401y.c)(0x5B6A238C)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\aaron\AppData\Local\Arm\Packs\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -D__MSP432E401Y__-o .\objects\system_msp432e401y.o --omf_browse .\objects\system_msp432e401y.crf --depend .\objects\system_msp432e401y.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
+I (C:\Users\aaron\AppData\Local\Arm\Packs\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include\msp.h)(0x5B69F95C)
+I (C:\Users\aaron\AppData\Local\Arm\Packs\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include\msp432e401y.h)(0x5BC0FEAE)
+I (C:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D264786)
+I (C:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
+I (C:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
+I (C:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
+I (C:\Users\aaron\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
+I (C:\Users\aaron\AppData\Local\Arm\Packs\TexasInstruments\MSP432E4_DFP\3.2.6\Device\Include\system_msp432e401y.h)(0x5B69F95C)

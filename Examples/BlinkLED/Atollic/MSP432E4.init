@@ -1,0 +1,61 @@
+#Enable clock for GPIOF ... SYS_RCGCGPIO_ADDR |= SYSCTL_RCGCGPIO_R5;
+set *((unsigned long*) 0x400FE608) |= 0x00000020
+
+#Wait for power up
+while (*((unsigned long*)0x400FE608) != 0x00000020)
+end
+
+# Unlock GPIOF Registers ... GPIOF_LOCK_ADDR |= GPIO_Lockword;
+set *((unsigned long*) 0x4005D520) = 0x4C4F434B
+
+# TCLK & TD0 init
+if ($tracePortWidth == 1)
+  # Make all GPIOF registers writeable   ... GPIOF_COMMIT_ADDR |= 0x0000000C;
+  set *((unsigned long*) 0x4005D524) |= 0x0000000C
+  # Set pin as output                    ... GPIOF_DIR_ADDR    |= 0x0000000C;
+  set *((unsigned long*) 0x4005D400) |= 0x0000000C
+  # Set pin as digital output            ... GPIOF_DEN_ADDR    |= 0x0000000C;
+  set *((unsigned long*) 0x4005D51C) |= 0x0000000C
+  # Set drive strength to 8 mA           ... GPIOF_DR8R_ADDR   |= 0x0000000C;
+  set *((unsigned long*) 0x4005D508) |= 0x0000000C
+  # Set pullup                           ... GPIOF_PUR_ADDR    |= 0x0000000C;
+  set *((unsigned long*) 0x4005D510) |= 0x0000000C
+  # Set AF mode to mode 0xF              ... GPIOF_PCTL_ADDR   |= 0x0000FF00;
+  set *((unsigned long*) 0x4005D52C) |= 0x0000FF00
+  # Activate AF                          ... GPIOF_AFSEL_ADDR  |= 0x0000000C;
+  set *((unsigned long*) 0x4005D420) |= 0x0000000C
+end
+# TCLK & TD0 TD1 init
+if ($tracePortWidth == 2)
+  # Make all GPIOF registers writeable   ... GPIOF_COMMIT_ADDR |= 0x0000000E;
+  set *((unsigned long*) 0x4005D524) |= 0x0000000E
+  # Set pin as output                    ... GPIOF_DIR_ADDR    |= 0x0000000E;
+  set *((unsigned long*) 0x4005D400) |= 0x0000000E
+  # Set pin as digital output            ... GPIOF_DEN_ADDR    |= 0x0000000E;
+  set *((unsigned long*) 0x4005D51C) |= 0x0000000E
+  # Set drive strength to 8 mA           ... GPIOF_DR8R_ADDR   |= 0x0000000E;
+  set *((unsigned long*) 0x4005D508) |= 0x0000000E
+  # Set pullup                           ... GPIOF_PUR_ADDR    |= 0x0000000E;
+  set *((unsigned long*) 0x4005D510) |= 0x0000000E
+  # Set AF mode to mode 0xF              ... GPIOF_PCTL_ADDR   |= 0x0000FFF0;
+  set *((unsigned long*) 0x4005D52C) |= 0x0000FFF0
+  # Activate AF                          ... GPIOF_AFSEL_ADDR  |= 0x0000000E;
+  set *((unsigned long*) 0x4005D420) |= 0x0000000E
+end
+# TCLK & TD0 TD1 TD2 TD3 init
+if ($tracePortWidth == 4)
+  # Make all GPIOF registers writeable   ... GPIOF_COMMIT_ADDR |= 0x0000001F;
+  set *((unsigned long*) 0x4005D524) |= 0x0000001F
+  # Set pin as output                    ... GPIOF_DIR_ADDR    |= 0x0000001F;
+  set *((unsigned long*) 0x4005D400) |= 0x0000001F
+  # Set pin as digital output            ... GPIOF_DEN_ADDR    |= 0x0000001F;
+  set *((unsigned long*) 0x4005D51C) |= 0x0000001F
+  # Set drive strength to 8 mA           ... GPIOF_DR8R_ADDR   |= 0x0000001F;
+  set *((unsigned long*) 0x4005D508) |= 0x0000001F
+  # Set pullup                           ... GPIOF_PUR_ADDR    |= 0x0000001F;
+  set *((unsigned long*) 0x4005D510) |= 0x0000001F
+  # Set AF mode to mode 0xF              ... GPIOF_PCTL_ADDR   |= 0x000FFFFF;
+  set *((unsigned long*) 0x4005D52C) |= 0x000FFFFF
+  # Activate AF                          ... GPIOF_AFSEL_ADDR  |= 0x0000001F;
+  set *((unsigned long*) 0x4005D420) |= 0x0000001F
+end

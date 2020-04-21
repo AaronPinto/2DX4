@@ -1,3 +1,0 @@
-The 'BlinkLED' project is a simple project toggling
-PN.0 by xor'ing PN.0 inside of a software loop.
-

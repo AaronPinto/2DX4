@@ -1,8 +1,0 @@
---cpu=Cortex-M4.fp.sp
-".\objects\blinkled.o"
-".\objects\startup_msp432e401y_uvision.o"
-".\objects\system_msp432e401y.o"
---strict --scatter ".\Objects\BlinkLED.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
---info sizes --info totals --info unused --info veneers
---list ".\Listings\BlinkLED.map" -o .\Objects\BlinkLED.axf
